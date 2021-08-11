@@ -1382,7 +1382,7 @@ GameObject:
   - component: {fileID: 415234138}
   - component: {fileID: 415234137}
   - component: {fileID: 415234136}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Tilemap_Stairs
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1430,6 +1430,10 @@ PolygonCollider2D:
     m_Paths:
     - - {x: 22.28728, y: -1.0125053}
       - {x: 21.871649, y: -1.0086216}
+      - {x: 21.7271, y: -1.2950512}
+      - {x: 21.291735, y: -1.323894}
+      - {x: 21.204342, y: -1.6404475}
+      - {x: 20.78722, y: -1.650153}
       - {x: 20.544172, y: -2.0093083}
       - {x: 21.228283, y: -2.2500296}
       - {x: 21.912691, y: -1.827486}
