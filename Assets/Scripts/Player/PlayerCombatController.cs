@@ -4,16 +4,19 @@ using UnityEngine;
 
 public class PlayerCombatController : MonoBehaviour
 {
+    private Transform PlayerTransform;
     [SerializeField]
     private bool combatEnabled;
     [SerializeField]
     private float inputTimer, attack1Radius, attack1Damage;
     [SerializeField]
+    private float stunDamageAmount = 1;
+    [SerializeField]
     private Transform attack1HitBoxPos;
     [SerializeField]
     private LayerMask whatIsDamageable;
 
-    private bool gotInput = false, isAttacking = false, isFirstAttack = false;
+    private bool gotInput = false, isAttacking = false , isFirstAttack = false;
 
     private float lastInputTime = Mathf.NegativeInfinity;
 
@@ -21,7 +24,7 @@ public class PlayerCombatController : MonoBehaviour
 
     public PlayerMovement pm;
 
-    private float[] attackDetails = new float[2];
+    private AttackDetails attackDetails;
 
     private PlayerStats PS;
 
@@ -51,6 +54,7 @@ public class PlayerCombatController : MonoBehaviour
                 //Attempt combat
                 gotInput = true;
                 lastInputTime = Time.time;
+                //PlayerTransform.Translate(Vector3.forward * Time.deltaTime);
             }
         }
     }
@@ -68,7 +72,6 @@ public class PlayerCombatController : MonoBehaviour
             //Perform Attack1
             if (!isAttacking)
             {
-
                 gotInput = false;
                 isAttacking = true;
                 anim.SetBool("attack1", true);
@@ -76,15 +79,15 @@ public class PlayerCombatController : MonoBehaviour
                 anim.SetBool("isAttacking", isAttacking);
 
                 //merubah setInt
-
-                anim.SetInteger("setInt", counter);
-
+             
+                 anim.SetInteger("setInt", counter);
+               
                 if (Input.GetMouseButtonUp(0) && Time.deltaTime >= Time.deltaTime + 0.4f)
                 {
                     isAttacking = false;
                     counter = 1;
                 }
-                else if (Input.GetMouseButtonUp(0))
+                else if(Input.GetMouseButtonUp(0))
                 {
                     isAttacking = false;
                 }
@@ -92,14 +95,14 @@ public class PlayerCombatController : MonoBehaviour
                 {
                     counter++;
                 }
-
+               
 
                 if (counter == 4)
                 {
                     counter = 1;
                 }
             }
-
+            
         }
 
         if (Time.time >= lastInputTime + inputTimer)
@@ -113,24 +116,24 @@ public class PlayerCombatController : MonoBehaviour
     {
         Collider2D[] detectedObjects = Physics2D.OverlapCircleAll(attack1HitBoxPos.position, attack1Radius, whatIsDamageable);
 
-        attackDetails[0] = attack1Damage;
-        attackDetails[1] = transform.position.x;
+        attackDetails.damageAmount = attack1Damage;
+        attackDetails.position = transform.position;
+        attackDetails.stunDamageAmount = stunDamageAmount;
 
         foreach (Collider2D collider in detectedObjects)
         {
-            collider.transform.SendMessage("Damage", attackDetails);
+            //collider.transform.SendMessage("Damage", attackDetails);
             collider.transform.parent.SendMessage("Damage", attackDetails);
-            //Instantiate hit particle
         }
     }
 
-    private void Damage(float[] attackDetails)
+    private void Damage(AttackDetails attackDetails)
     {
         int direction;
 
-        PS.DecreaseHealth(attackDetails[0]);
+        PS.DecreaseHealth(attackDetails.damageAmount);
 
-        if (attackDetails[1] < transform.position.x)
+        if (attackDetails.position.x < transform.position.x)
         {
             direction = 1;
         }

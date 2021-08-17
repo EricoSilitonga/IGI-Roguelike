@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     private Rigidbody2D rb;
-
+   
     [SerializeField]
     private float moveSpeed = 10;
     private float moveInputDirection;
@@ -49,10 +49,10 @@ public class PlayerMovement : MonoBehaviour
     private bool knockback;
 
     public LayerMask whatIsGround;
-
+    
     public int amountOfJump = 1;
     private int amountOfJumpLeft;
-    private int facingDirection = 1;
+    public int facingDirection = 1;
     private int lastWallJumpDirection;
     public int totalEnemyDestroyed = 0;
 
@@ -70,7 +70,7 @@ public class PlayerMovement : MonoBehaviour
         amountOfJumpLeft = amountOfJump;
         wallHopDirection.Normalize();
         wallJumpDirection.Normalize();
-
+        
     }
 
     // Update is called once per frame
@@ -82,7 +82,7 @@ public class PlayerMovement : MonoBehaviour
         CheckIfCanJump();
         CheckIfWallSliding();
         CheckJump();
-        Debug.Log(totalEnemyDestroyed);
+        //Debug.Log(totalEnemyDestroyed);
         CheckKnockback();
     }
 
@@ -90,7 +90,7 @@ public class PlayerMovement : MonoBehaviour
     {
         ApplyMovement();
         checkSurroundings();
-
+        
     }
 
     private void CheckKnockback()
@@ -116,7 +116,7 @@ public class PlayerMovement : MonoBehaviour
     }
     private void CheckIfCanJump()
     {
-        if (isGrounded && rb.velocity.y <= 0.01f)
+        if(isGrounded && rb.velocity.y <= 0.01f) 
         {
             amountOfJumpLeft = amountOfJump;
             PCC.setCombatEnabled(false);
@@ -143,13 +143,12 @@ public class PlayerMovement : MonoBehaviour
         if (isFaceRight && moveInputDirection < 0)
         {
             Flip();
-        }
-        else if (!isFaceRight && moveInputDirection > 0)
+        } else if(!isFaceRight && moveInputDirection > 0)
         {
             Flip();
         }
 
-        if (Mathf.Abs(rb.velocity.x) >= 0.01f)
+        if(Mathf.Abs(rb.velocity.x) >= 0.01f)
         {
             if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D))
             {
@@ -161,7 +160,7 @@ public class PlayerMovement : MonoBehaviour
                 isRunning = false;
                 PCC.setCombatEnabled(true);
             }
-
+            
         }
         else
         {
@@ -172,12 +171,12 @@ public class PlayerMovement : MonoBehaviour
     private void checkSurroundings()
     {
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, whatIsGround);
-        isTouchingWall = Physics2D.Raycast(wallCheck.position, transform.right, wallCheckDistance, whatIsGround);
+        isTouchingWall = Physics2D.Raycast(wallCheck.position, transform.right,wallCheckDistance,whatIsGround);
     }
 
     private void CheckIfWallSliding()
     {
-        if (isTouchingWall && moveInputDirection == facingDirection && rb.velocity.y < 0)
+        if(isTouchingWall && moveInputDirection == facingDirection && rb.velocity.y < 0)
         {
             isWallSliding = true;
         }
@@ -204,15 +203,15 @@ public class PlayerMovement : MonoBehaviour
         {
             rb.velocity = new Vector2(rb.velocity.x * airDragMultiplier, rb.velocity.y);
         }
-        else if (canMove && !knockback)
-        {
-            rb.velocity = new Vector2(moveSpeed * moveInputDirection, rb.velocity.y);
+        else if(canMove && !knockback)
+          {
+                rb.velocity = new Vector2(moveSpeed * moveInputDirection, rb.velocity.y);
 
-        }
+            }
 
         if (isWallSliding)
         {
-            if (rb.velocity.y < -wallSlideSpeed)
+            if(rb.velocity.y < -wallSlideSpeed)
             {
                 rb.velocity = new Vector2(rb.velocity.x, -wallSlideSpeed);
             }
@@ -224,7 +223,7 @@ public class PlayerMovement : MonoBehaviour
         moveInputDirection = Input.GetAxisRaw("Horizontal");
         if (Input.GetButtonDown("Jump"))
         {
-            if (isGrounded || (amountOfJumpLeft > 0 && !isTouchingWall))
+            if(isGrounded||(amountOfJumpLeft > 0 && !isTouchingWall))
             {
                 NormalJump();
             }
@@ -249,8 +248,8 @@ public class PlayerMovement : MonoBehaviour
         if (!canMove)
         {
             turnTimer -= Time.deltaTime;
-
-            if (turnTimer <= 0)
+            
+            if(turnTimer <= 0)
             {
                 canMove = true;
                 canFlip = true;
@@ -269,28 +268,26 @@ public class PlayerMovement : MonoBehaviour
         if (jumpTimer > 0)
         {
             //WallJump
-            if (!isGrounded && isTouchingWall && moveInputDirection != 0 && moveInputDirection != -facingDirection)
+            if(!isGrounded && isTouchingWall && moveInputDirection != 0 && moveInputDirection != -facingDirection)
             {
                 WallJump();
-            }
-            else if (isGrounded)
+            }else if (isGrounded)
             {
                 NormalJump();
             }
         }
-        if (isAttemptingToJump)
+        if(isAttemptingToJump)
         {
             jumpTimer -= Time.deltaTime;
         }
 
-        if (wallJumpTimer > 0)
+        if(wallJumpTimer > 0)
         {
-            if (hasWallJumped && moveInputDirection == -lastWallJumpDirection)
+            if(hasWallJumped && moveInputDirection == -lastWallJumpDirection)
             {
                 rb.velocity = new Vector2(rb.velocity.x, 0.0f);
                 hasWallJumped = false;
-            }
-            else if (wallJumpTimer <= 0)
+            }else if (wallJumpTimer <= 0)
             {
                 hasWallJumped = false;
             }
@@ -342,7 +339,7 @@ public class PlayerMovement : MonoBehaviour
             isFaceRight = !isFaceRight;
             transform.Rotate(0.0f, 180.0f, 0.0f);
         }
-
+        
     }
 
     public void EnableFlip()
@@ -369,5 +366,5 @@ public class PlayerMovement : MonoBehaviour
     public bool getIsRunning()
     {
         return isRunning;
-    }
+    } 
 }

@@ -27,7 +27,7 @@ public class PlayerStats : MonoBehaviour
     {
         currentHealth -= amount;
 
-        if (currentHealth <= 0.0f)
+        if(currentHealth <= 0.0f)
         {
             Die();
         }
