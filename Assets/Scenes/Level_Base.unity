@@ -7662,7 +7662,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1269265919}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9c4ac3bd40e13f04ca67e85e4decea44, type: 3}
+  m_Script: {fileID: 11500000, guid: d6b1a66d4cee34149b1bc5785e116721, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 9
@@ -7682,6 +7682,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   amountOfJump: 1
+  facingDirection: 1
   totalEnemyDestroyed: 0
   groundCheck: {fileID: 1139284489}
   wallCheck: {fileID: 62698826}
@@ -7694,17 +7695,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 1269265919}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 90dbb6c6b4e4fd44fa15a31d967727ab, type: 3}
+  m_Script: {fileID: 11500000, guid: 07ae17dd75f4ec841a501292d6c78bfa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   combatEnabled: 1
   inputTimer: 0.2
   attack1Radius: 0.7
   attack1Damage: 10
+  stunDamageAmount: 1
   attack1HitBoxPos: {fileID: 2030448025}
   whatIsDamageable:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
   pm: {fileID: 1269265924}
 --- !u!114 &1269265927
 MonoBehaviour:
@@ -7715,12 +7717,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1269265919}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3a25c5b4719e86046979f7a2a63bcf2a, type: 3}
+  m_Script: {fileID: 11500000, guid: 49aae83106ae0fe41abd8f5799e5082e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 2
-  deathChunkParticle: {fileID: 1434808896963093010, guid: 3b7cea4725260384492b0cc65316421c, type: 3}
-  deathBloodParticle: {fileID: 9195223795262751490, guid: 18ccd82588f1a584baa86ca35202dc39, type: 3}
+  maxHealth: 50
+  deathChunkParticle: {fileID: 1434808896963093010, guid: 7e156023050131b4a88fd0e15c9917b5, type: 3}
+  deathBloodParticle: {fileID: 9195223795262751490, guid: ddc789925fa55f44098f4b9e2f94de7a, type: 3}
 --- !u!95 &1269265928
 Animator:
   serializedVersion: 3
