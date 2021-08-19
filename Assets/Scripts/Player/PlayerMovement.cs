@@ -31,6 +31,7 @@ public class PlayerMovement : MonoBehaviour
 
     [SerializeField]
     private Vector2 knockbackSpeed;
+    private Vector2 currentVelocity;
 
     private Animator anim;
 
@@ -140,6 +141,12 @@ public class PlayerMovement : MonoBehaviour
 
     private void checkMovementDirection()
     {
+        if (Input.GetKey(KeyCode.Mouse0)&&isGrounded)
+        {
+            currentVelocity = rb.velocity;
+            rb.AddForce(Vector2.right * 100f * facingDirection);
+
+        }
         if (isFaceRight && moveInputDirection < 0)
         {
             Flip();
@@ -199,6 +206,7 @@ public class PlayerMovement : MonoBehaviour
     }
     private void ApplyMovement()
     {
+        
         if (!isGrounded && !isWallSliding && moveInputDirection == 0 && !knockback)
         {
             rb.velocity = new Vector2(rb.velocity.x * airDragMultiplier, rb.velocity.y);

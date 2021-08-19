@@ -754,7 +754,7 @@ MonoBehaviour:
   knockbackDuration: 0.2
   wallHopDirection: {x: 1, y: 0.5}
   wallJumpDirection: {x: 1, y: 2}
-  knockbackSpeed: {x: 10, y: 10}
+  knockbackSpeed: {x: 10, y: 3}
   whatIsGround:
     serializedVersion: 2
     m_Bits: 8
@@ -782,7 +782,7 @@ Rigidbody2D:
   m_Material: {fileID: 6200000, guid: 3823d78477238cf43893600df28a3811, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 1
+  m_CollisionDetection: 0
   m_Constraints: 4
 --- !u!212 &593614840
 SpriteRenderer:
