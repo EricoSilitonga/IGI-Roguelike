@@ -227,3 +227,4 @@ Received Import Request.
 Start importing Assets/Sprite/UI_menu/tombol/setting.png using Guid(0cc86e1290eeda2409d2d2dffb56a4b2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '66821e1117f5e7efca4cbbf636bfbeb4') in 0.010849 seconds
   Import took 0.014515 seconds .
 
+AssetImportWorkerClient::OnTransportError - code=2 error=End of file
