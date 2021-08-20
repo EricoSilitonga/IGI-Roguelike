@@ -5,7 +5,8 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     private Rigidbody2D rb;
-   
+    public ParticleSystem wallslideDust;
+    public ParticleSystem walkingDust;
     [SerializeField]
     private float moveSpeed = 10;
     private float moveInputDirection;
@@ -221,6 +222,7 @@ public class PlayerMovement : MonoBehaviour
         {
             if(rb.velocity.y < -wallSlideSpeed)
             {
+                CreateDustWallslide();
                 rb.velocity = new Vector2(rb.velocity.x, -wallSlideSpeed);
             }
         }
@@ -343,9 +345,11 @@ public class PlayerMovement : MonoBehaviour
     {
         if (!isWallSliding && canFlip && !knockback)
         {
+             
             facingDirection *= -1;
             isFaceRight = !isFaceRight;
             transform.Rotate(0.0f, 180.0f, 0.0f);
+            CreateDustWalking();
         }
         
     }
@@ -374,5 +378,23 @@ public class PlayerMovement : MonoBehaviour
     public bool getIsRunning()
     {
         return isRunning;
-    } 
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag=="Enemy")
+        {
+            Physics2D.IgnoreCollision(collision.gameObject.GetComponent<Collider2D>(), GetComponent<Collider2D>());
+        }
+    }
+
+    void CreateDustWalking()
+    {
+        walkingDust.Play();
+    }
+
+    void CreateDustWallslide()
+    {
+        wallslideDust.Play();
+    }
 }

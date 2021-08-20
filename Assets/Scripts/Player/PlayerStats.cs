@@ -16,17 +16,19 @@ public class PlayerStats : MonoBehaviour
 
     private GameManager GM;
 
+    public HealthBar healthBar;
+
     private void Start()
     {
         GM = GameObject.Find("GameManager").GetComponent<GameManager>();
         currentHealth = maxHealth;
-
+        healthBar.SetMaxHealth(maxHealth);
     }
 
     public void DecreaseHealth(float amount)
     {
         currentHealth -= amount;
-
+        healthBar.setHealth(currentHealth);
         if(currentHealth <= 0.0f)
         {
             Die();
