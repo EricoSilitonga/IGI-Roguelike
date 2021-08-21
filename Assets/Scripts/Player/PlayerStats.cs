@@ -35,6 +35,12 @@ public class PlayerStats : MonoBehaviour
         }
     }
 
+    public void IncreaseHealth(float amount)
+    {
+        currentHealth += amount;
+        healthBar.setHealth(currentHealth);
+    }
+
     private void Die()
     {
         Instantiate(deathChunkParticle, transform.position, deathChunkParticle.transform.rotation);

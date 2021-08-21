@@ -150,9 +150,11 @@ public class PlayerMovement : MonoBehaviour
         }
         if (isFaceRight && moveInputDirection < 0)
         {
+            CreateDustWalking();
             Flip();
         } else if(!isFaceRight && moveInputDirection > 0)
         {
+            CreateDustWalking();
             Flip();
         }
 
@@ -349,7 +351,6 @@ public class PlayerMovement : MonoBehaviour
             facingDirection *= -1;
             isFaceRight = !isFaceRight;
             transform.Rotate(0.0f, 180.0f, 0.0f);
-            CreateDustWalking();
         }
         
     }
