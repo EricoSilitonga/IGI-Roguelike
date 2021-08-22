@@ -672,7 +672,7 @@ GameObject:
   - component: {fileID: 1902445628}
   m_Layer: 0
   m_Name: RoomTemplates
-  m_TagString: Untagged
+  m_TagString: Rooms
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1235,6 +1235,10 @@ PrefabInstance:
     - target: {fileID: 756546609304938458, guid: 76a6e9b6214e17d4e80622c9d649d03d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7002274348351494243, guid: 76a6e9b6214e17d4e80622c9d649d03d, type: 3}
+      propertyPath: openingDirection
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 76a6e9b6214e17d4e80622c9d649d03d, type: 3}
