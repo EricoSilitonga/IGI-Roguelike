@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+
     private Rigidbody2D rb;
+    public ParticleSystem dashDust;
     public ParticleSystem wallslideDust;
     public ParticleSystem walkingDust;
     [SerializeField]
@@ -12,6 +14,8 @@ public class PlayerMovement : MonoBehaviour
     private float moveInputDirection;
     [SerializeField]
     private float jumpforce = 16f;
+    public float dashSpeed = 50f;
+    public float dashTime = 0.5f;
     private float jumpTimer;
     private float turnTimer;
     private float wallJumpTimer;
@@ -24,6 +28,7 @@ public class PlayerMovement : MonoBehaviour
     public float wallJumpForce;
     public float turnTimerSet = 0.1f;
     private float knockbackStartTime;
+    private float baseSpeed;
     [SerializeField]
     private float knockbackDuration;
 
@@ -49,6 +54,7 @@ public class PlayerMovement : MonoBehaviour
     private bool canFlip;
     private bool hasWallJumped;
     private bool knockback;
+    private bool isDashing;
 
     public LayerMask whatIsGround;
     
@@ -66,6 +72,7 @@ public class PlayerMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        baseSpeed = moveSpeed;
         PCC = GetComponent<PlayerCombatController>();
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
@@ -86,6 +93,7 @@ public class PlayerMovement : MonoBehaviour
         CheckJump();
         //Debug.Log(totalEnemyDestroyed);
         CheckKnockback();
+        CheckDash();
     }
 
     private void FixedUpdate()
@@ -110,6 +118,8 @@ public class PlayerMovement : MonoBehaviour
 
     }
 
+    
+    
     public void Knockback(int direction)
     {
         knockback = true;
@@ -139,6 +149,8 @@ public class PlayerMovement : MonoBehaviour
             canNormalJump = true;
         }
     }
+
+  
 
     private void checkMovementDirection()
     {
@@ -273,7 +285,10 @@ public class PlayerMovement : MonoBehaviour
             checkJumpMultiplier = false;
             rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * variableJumpHeightMultiplier);
         }
+
+ 
     }
+
 
     private void CheckJump()
     {
@@ -397,5 +412,32 @@ public class PlayerMovement : MonoBehaviour
     void CreateDustWallslide()
     {
         wallslideDust.Play();
+    }
+
+    void createDustDash()
+    {
+        dashDust.Play();
+    }
+
+    void CheckDash()
+    {
+        if (Input.GetKeyDown(KeyCode.LeftShift))
+        {
+            if (!isDashing)
+            {
+                StartCoroutine(Dash());
+            }
+        }
+    }
+    IEnumerator Dash()
+    {
+        createDustDash();
+        isDashing = true;
+        moveSpeed *= dashSpeed;
+
+        yield return new WaitForSeconds(dashTime);
+
+        moveSpeed = baseSpeed;
+        isDashing = false;
     }
 }
