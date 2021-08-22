@@ -62,13 +62,13 @@ public class RoomSpawner : MonoBehaviour
                 Instantiate(templates.closedRoom, transform.position, Quaternion.identity);
                 Destroy(gameObject);
             }
-            else
-            {
-                Debug.Log("No room");
-            }
+            
             spawned = true;
         }
-        
+        else if(collision.CompareTag("Destroyer"))
+        {
+            Destroy(gameObject);
+        }
 
     }
 }
