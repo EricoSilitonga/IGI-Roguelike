@@ -13,4 +13,26 @@ public class RoomTemplates : MonoBehaviour
 
     public List<GameObject> rooms;
 
+    public float waitTime;
+    private bool spawnedKey;
+    public GameObject key;
+
+    void Update()
+    {
+        if(waitTime <= 0 && spawnedKey == false)
+        {
+            for (int i = 0; i< rooms.Count; i++)
+            {
+                if(i == rooms.Count - 1)
+                {
+                    Instantiate(key, rooms[i].transform.position, Quaternion.identity);
+                    spawnedKey = true;
+                }
+            }
+        }
+        else
+        {
+            waitTime -= Time.deltaTime;
+        }
+    }
 }

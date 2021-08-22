@@ -13,6 +13,7 @@ public class Destroyer : MonoBehaviour
         else
         {
             Destroy(collision.gameObject);
+            
         }
         
     }
