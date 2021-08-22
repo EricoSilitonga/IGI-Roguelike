@@ -571,3 +571,68 @@ Received Import Request.
 Start importing Assets/Material/EnemiesMat.physicsMaterial2D using Guid(4d74a87eeb0c15e4fa0b9a3357594e6e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '862562a5654d47250729ee8912be7c7b') in 0.008628 seconds
   Import took 0.012123 seconds .
 
+========================================================================
+Received Import Request.
+  Time since last request: 671.255282 seconds.
+  path: Assets/Scripts/RoomTemplates.cs
+  artifactKey: Guid(de61f1337d2f5dd44850d7022df4fd94) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/RoomTemplates.cs using Guid(de61f1337d2f5dd44850d7022df4fd94) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '416b5de2f5196c2c1a78d8ae2d142e52') in 0.010949 seconds
+  Import took 0.016034 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.000826 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.46 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.720 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.48 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2018 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 98.3 MB.
+System memory in use after: 98.5 MB.
+
+Unloading 8 unused Assets to reduce memory usage. Loaded Objects now: 2565.
+Total: 1.881800 ms (FindLiveObjects: 0.168900 ms CreateObjectMapping: 0.067500 ms MarkObjects: 1.632900 ms  DeleteObjects: 0.011800 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001352 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.46 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.696 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.50 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2018 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 97.5 MB.
+System memory in use after: 97.7 MB.
+
+Unloading 8 unused Assets to reduce memory usage. Loaded Objects now: 2569.
+Total: 1.853800 ms (FindLiveObjects: 0.292200 ms CreateObjectMapping: 0.143400 ms MarkObjects: 1.406100 ms  DeleteObjects: 0.011200 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 200.589865 seconds.
+  path: Assets/Scripts/RoomTemplates.cs
+  artifactKey: Guid(de61f1337d2f5dd44850d7022df4fd94) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/RoomTemplates.cs using Guid(de61f1337d2f5dd44850d7022df4fd94) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '20c144f3ca48a2373d39381c18ed272c') in 0.007255 seconds
+  Import took 0.011045 seconds .
+
+AssetImportWorkerClient::OnTransportError - code=2 error=End of file
