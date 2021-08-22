@@ -27,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5025192047907583542}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -29.989998, y: 0, z: -162.74942}
+  m_LocalPosition: {x: -29.989998, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8260796264619185541}
@@ -374,6 +374,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8260796264619185541}
   - component: {fileID: 8260796264619185540}
+  - component: {fileID: -7650510563239423180}
   m_Layer: 0
   m_Name: LR
   m_TagString: Untagged
@@ -413,6 +414,18 @@ Grid:
   m_CellGap: {x: 0, y: 0, z: 0}
   m_CellLayout: 0
   m_CellSwizzle: 0
+--- !u!114 &-7650510563239423180
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8260796264619185543}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93db0c5bce6e02f41a055db8c5189dab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8260796264937789696
 GameObject:
   m_ObjectHideFlags: 0

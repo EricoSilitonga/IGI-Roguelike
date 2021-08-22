@@ -154,10 +154,10 @@ public class PlayerMovement : MonoBehaviour
 
     private void checkMovementDirection()
     {
-        if (Input.GetKey(KeyCode.Mouse0)&&isGrounded)
+        if (Input.GetKeyDown(KeyCode.Mouse0)&&isGrounded)
         {
             currentVelocity = rb.velocity;
-            rb.AddForce(Vector2.right * 100f * facingDirection);
+            rb.AddForce(Vector2.right * 500f * facingDirection);
 
         }
         if (isFaceRight && moveInputDirection < 0)

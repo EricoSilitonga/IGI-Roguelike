@@ -9,6 +9,8 @@ TagManager:
   - Projectile
   - SpawnPoint
   - Rooms
+  - ClosedRoom
+  - Room
   layers:
   - Default
   - TransparentFX

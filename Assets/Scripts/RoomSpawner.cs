@@ -33,28 +33,33 @@ public class RoomSpawner : MonoBehaviour
             else if (openingDirection == 2)
             {
                 rand = Random.Range(0, templates.topRooms.Length);
-                Instantiate(templates.topRooms[rand], transform.position, templates.topRooms[rand].transform.rotation);
+                Instantiate(templates.topRooms[rand], transform.position, Quaternion.identity);
             }
             else if (openingDirection == 3)
             {
                 rand = Random.Range(0, templates.leftRooms.Length);
-                Instantiate(templates.leftRooms[rand], transform.position, templates.leftRooms[rand].transform.rotation);
+                Instantiate(templates.leftRooms[rand], transform.position, Quaternion.identity);
             }
             else if (openingDirection == 4)
             {
                 rand = Random.Range(0, templates.rightRooms.Length);
-                Instantiate(templates.rightRooms[rand], transform.position, templates.rightRooms[rand].transform.rotation);
+                Instantiate(templates.rightRooms[rand], transform.position, Quaternion.identity);
             }
             spawned = true;
         }
         
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.CompareTag("SpawnPoint") && collision.GetComponent<RoomSpawner>().spawned == true)
+        if(collision.CompareTag("SpawnPoint"))
         {
-            Destroy(gameObject);
+            if(collision.GetComponent<RoomSpawner>().spawned == false && spawned == false)
+            {
+                Instantiate(templates.closedRoom, transform.position, Quaternion.identity);
+                Destroy(gameObject);
+            }
+            spawned = true;
         }
 
     }
