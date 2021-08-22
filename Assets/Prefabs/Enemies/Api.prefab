@@ -299,6 +299,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6998033064719748032}
   - component: {fileID: 6998033064719748033}
+  - component: {fileID: 2809939379814368196}
   m_Layer: 6
   m_Name: Api
   m_TagString: Enemy
@@ -346,6 +347,27 @@ MonoBehaviour:
   deadStateData: {fileID: 11400000, guid: 0e47bfef1a13cfe4eac29973e5320026, type: 2}
   stunStateData: {fileID: 11400000, guid: 07fa6844876f5ff4c9752c420314e99b, type: 2}
   rangedAttackPosition: {fileID: 3453150766901730477}
+--- !u!50 &2809939379814368196
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6998033064719748047}
+  m_BodyType: 2
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &6998033065661849585
 GameObject:
   m_ObjectHideFlags: 0
