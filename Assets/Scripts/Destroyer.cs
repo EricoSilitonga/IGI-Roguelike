@@ -11,13 +11,13 @@ public class Destroyer : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player"))
+        if (collision.CompareTag("SpawnPoint"))
         {
-            
+            Destroy(collision.gameObject);
         }
         else
         {
-            Destroy(collision.gameObject);
+            
         }
         
     }
