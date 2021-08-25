@@ -1621,6 +1621,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4515678556549946732, guid: 76a6e9b6214e17d4e80622c9d649d03d, type: 3}
+      propertyPath: m_TagString
+      value: Destroyer
+      objectReference: {fileID: 0}
     - target: {fileID: 7002274348351494243, guid: 76a6e9b6214e17d4e80622c9d649d03d, type: 3}
       propertyPath: openingDirection
       value: 2
