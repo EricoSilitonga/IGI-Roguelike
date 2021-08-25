@@ -11,7 +11,7 @@ public class Destroyer : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("SpawnPoint") || collision.CompareTag("ClosedRoom"))
+        if (collision.CompareTag("SpawnPoint") || collision.CompareTag("ClosedRoom") || collision.CompareTag("Room"))
         {
             Destroy(collision.gameObject);
         }
