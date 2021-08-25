@@ -34,37 +34,37 @@ public class SoundManager : MonoBehaviour
         switch (clip)
         {
             case "attack1":
-                audioSrc.PlayOneShot(attack1, 0.1f);
+                audioSrc.PlayOneShot(attack1, 0.3f);
                 break;
             case "attack2":
-                audioSrc.PlayOneShot(attack2, 0.1f);
+                audioSrc.PlayOneShot(attack2, 0.3f);
                 break;
             case "attack3":
-                audioSrc.PlayOneShot(attack3, 0.1f);
+                audioSrc.PlayOneShot(attack3, 0.3f);
                 break;
             case "dash":
-                audioSrc.PlayOneShot(dash, 0.1f);
+                audioSrc.PlayOneShot(dash, 0.3f);
                 break;
             case "jump":
-                audioSrc.PlayOneShot(jump, 0.1f);
+                audioSrc.PlayOneShot(jump, 0.3f);
                 break;
             case "key":
-                audioSrc.PlayOneShot(key, 0.1f);
+                audioSrc.PlayOneShot(key, 0.3f);
                 break;
             case "apiSound":
-                audioSrc.PlayOneShot(apiSound, 0.1f);
+                audioSrc.PlayOneShot(apiSound, 0.31f);
                 break;
             case "airSound":
-                audioSrc.PlayOneShot(airSound, 0.1f);
+                audioSrc.PlayOneShot(airSound, 0.3f);
                 break;
             case "tanahSound":
-                audioSrc.PlayOneShot(tanahSound,0.1f);
+                audioSrc.PlayOneShot(tanahSound, 0.3f);
                 break;
             case "sakit":
-                audioSrc.PlayOneShot(sakit,0.1f);
+                audioSrc.PlayOneShot(sakit, 0.3f);
                 break;
             case "walk":
-                audioSrc.PlayOneShot(walk,0.1f);
+                audioSrc.PlayOneShot(walk, 0.3f);
                 break;
         }
     }
