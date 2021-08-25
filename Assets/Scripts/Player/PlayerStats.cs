@@ -28,6 +28,7 @@ public class PlayerStats : MonoBehaviour
 
     public void DecreaseHealth(float amount)
     {
+        SoundManager.PlaySound("sakit");
         currentHealth -= amount;
         healthBar.setHealth(currentHealth);
         if(currentHealth <= 0.0f)

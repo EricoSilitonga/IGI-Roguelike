@@ -18,6 +18,7 @@ public class E3_PlayerDetectedState : PlayerDetectedState
     public override void Enter()
     {
         base.Enter();
+        SoundManager.PlaySound("airSound");
     }
 
     public override void Exit()

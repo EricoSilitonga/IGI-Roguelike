@@ -229,7 +229,8 @@ public class PlayerMovement : MonoBehaviour
         else if(canMove && !knockback)
           {
                 rb.velocity = new Vector2(moveSpeed * moveInputDirection, rb.velocity.y);
-
+                
+            
             }
 
         if (isWallSliding)
@@ -329,6 +330,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (canNormalJump)
         {
+            SoundManager.PlaySound("jump");
             PCC.setCombatEnabled(false);
             rb.velocity = new Vector2(rb.velocity.x, jumpforce);
             amountOfJumpLeft--;
@@ -431,6 +433,7 @@ public class PlayerMovement : MonoBehaviour
     }
     IEnumerator Dash()
     {
+        SoundManager.PlaySound("dash");
         createDustDash();
         isDashing = true;
         moveSpeed *= dashSpeed;

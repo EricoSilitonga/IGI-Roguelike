@@ -14,6 +14,7 @@ public class E1_PlayerDetectedState : PlayerDetectedState
     public override void Enter()
     {
         base.Enter();
+        SoundManager.PlaySound("tanahSound");
     }
 
     public override void Exit()

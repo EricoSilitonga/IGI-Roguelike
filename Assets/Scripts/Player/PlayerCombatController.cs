@@ -95,7 +95,18 @@ public class PlayerCombatController : MonoBehaviour
                 {
                     counter++;
                 }
-               
+
+                if (counter == 1)
+                {
+                    SoundManager.PlaySound("attack1");
+                }else if(counter == 2)
+                {
+                    SoundManager.PlaySound("attack2");
+                }
+                else if(counter == 3)
+                {
+                    SoundManager.PlaySound("attack3");
+                }
 
                 if (counter == 4)
                 {

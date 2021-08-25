@@ -17,7 +17,8 @@ public class E2_PlayerDetected : PlayerDetectedState
 
     public override void Enter()
     {
-        base.Enter();
+        base.Enter(); 
+        SoundManager.PlaySound("apiSound");
     }
 
     public override void Exit()
